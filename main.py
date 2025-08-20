@@ -22,6 +22,22 @@ def kisi_ekle(rehber_listesi):
 
     print(f"{isim} başarı ile rehbere eklendi. ")
 
+def kisi_sil(rehber_listesi):
+    print("---Kişi Silme ---")
+
+    silinecek_kisi = input("Lütfen silinecek kişinin adını yazınız:")
+    bulunan_kisi = None
+
+    for kisi in rehber_listesi:
+        if kisi["isim"].lower() == silinecek_kisi.lower():
+            bulunan_kisi = kisi
+            break
+
+    if bulunan_kisi:
+        rehber_listesi.remove(bulunan_kisi)
+        print(f"{bulunan_kisi["isim"]} listeden başarı ile silindi.")
+    else:
+        print(f"{silinecek_kisi} bulunamadı.")
 # --- ANA PROGRAM AKIŞI ---
 rehber = [
     {'isim': 'Walter White', 'telefon': '555-1234'},
@@ -42,7 +58,7 @@ while True:
     elif secim == '2':
         kisi_ekle(rehber)
     elif secim == '3':
-        print("Bu özellik yakında eklenecek.")
+        kisi_sil(rehber)
     elif secim == '4':
         print("Programdan çıkılıyor...")
         break  # while döngüsünü kırar ve programı sonlandırır.
