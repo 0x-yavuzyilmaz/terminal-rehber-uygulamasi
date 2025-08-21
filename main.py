@@ -38,20 +38,44 @@ def kisi_sil(rehber_listesi):
         print(f"{bulunan_kisi["isim"]} listeden başarı ile silindi.")
     else:
         print(f"{silinecek_kisi} bulunamadı.")
+
+
+def kisi_guncelle(rehber_listesi):
+    print("--- Rehberdeki Kişileri Günceller ---")
+    guncellenecek_kisi = input("Lütfen güncellencek kişinin adını yazınız:")
+
+
+    for kisi in rehber_listesi:
+        if kisi["isim"].lower() == guncellenecek_kisi.lower():
+            yeni_telefon = input("Lütfen yeni numarayı yazınız:")
+            kisi["telefon"] = yeni_telefon
+            print("Güncelleme Başarılı!")
+            break
+        else:
+            print("Kişi Bulunamadı!")
+
+
+
+
+
 # --- ANA PROGRAM AKIŞI ---
 rehber = [
     {'isim': 'Walter White', 'telefon': '555-1234'},
     {'isim': 'Jesse Pinkman', 'telefon': '555-5678'},
 ]
 
+
+
+
 while True:
     print("\n--- Telefon Rehberi ---")
     print("1: Kişileri Göster")
     print("2: Yeni Kişi Ekle")
-    print("3: Kişi Sil (Henüz yapılmadı)")
-    print("4: Çıkış")
+    print("3: Kişi Sil")
+    print("4: Kişi Güncelle")
+    print("5: Çıkış")
 
-    secim = input("Seçiminiz (1/2/3/4): ")
+    secim = input("Seçiminiz (1/2/3/4/5): ")
 
     if secim == '1':
         kisileri_goster(rehber)
@@ -60,6 +84,8 @@ while True:
     elif secim == '3':
         kisi_sil(rehber)
     elif secim == '4':
+        kisi_guncelle(rehber)
+    elif secim == '5':
         print("Programdan çıkılıyor...")
         break  # while döngüsünü kırar ve programı sonlandırır.
     else:
