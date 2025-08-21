@@ -15,7 +15,6 @@ class Yazilimci(Calisan):
 
     def bilgi_ver(self):
         ebeveynden_gelen_bilgi = super().bilgi_ver()
-        # DÜZELTME: 'f' tırnağın DIŞINDA ve değişken adı DOĞRU
         return f"{ebeveynden_gelen_bilgi}, Bildiği Diller: {self.bildigi_diller}"
 
 
@@ -26,7 +25,6 @@ class Yonetici(Calisan):
 
     def bilgi_ver(self):
         ebeveynden_gelen_bilgi = super().bilgi_ver()
-        # DÜZELTME: 'f' tırnağın DIŞINDA ve değişken adı DOĞRU
         return f"{ebeveynden_gelen_bilgi}, Sorumlu olduğu kişi sayısı: {self.sorumlu_oldugu_kisi_sayisi}"
 
 
