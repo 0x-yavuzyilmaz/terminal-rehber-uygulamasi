@@ -21,18 +21,6 @@ class Kedi(Hayvan):
         # override
 
 
-# Başka bir çocuk sınıf
-# class Kopek(Hayvan):
-#     def __init__(self, isim, yas, cins):
-#         # Ebeveynin __init__ metodunu ÇAĞIRMALIYIZ ki isim ve yas özelliklerini ayarlasın.
-#         super().__init__(isim, yas)
-#         print(f"Bir Kopek nesnesi yaratılıyor...")
-#         # Köpeğe özel bir özellik ekliyoruz.
-#         self.cins = cins
-#
-#     # ses_cikar metodunu override edelim.
-#     def ses_cikar(self):
-#         return "Hav hav!"
 
 class Kopek(Hayvan):
     def __init__(self, isim, yas, cins):
